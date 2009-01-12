@@ -1,0 +1,48 @@
+= interval_exec
+
+== DESCRIPTION:
+
+Library to execute code at defined intervals -- useful in command-line scripts or daemons when a resource must be polled periodically.
+
+== SYNOPSIS:
+
+IntervalExec.run wraps a block of code to be executed at a given interval.  For example,
+
+  IntervalExec.run(10, :immediate) do
+    puts "Hello, world!"
+  end
+
+will put "Hello, world!" to STDOUT every 10 seconds.  See IntervalExec docs for more detail; options provide a post-interval callback hook and change handling for blocks that run longer than the interval
+
+== Author:
+
+Ben Koski, http://benkoski.com
+
+== INSTALL:
+
+  sudo gem install bkoski-interval_exec --source http://gems.github.com
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2009 Ben Koski
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
