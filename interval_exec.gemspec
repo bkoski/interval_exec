@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{interval_exec}
-  s.version = "0.5.0"
+  s.version = "0.5.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ben Koski"]
-  s.date = %q{2009-01-12}
+  s.date = %q{2009-01-13}
   s.description = %q{Library to execute code at defined intervals -- useful in command-line scripts or daemons when a resource must be polled periodically.}
   s.email = ["ben@benkoski.com"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "PostInstall.txt", "README.rdoc"]
@@ -35,5 +35,4 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<newgem>, [">= 1.2.3"])
     s.add_dependency(%q<hoe>, [">= 1.8.0"])
   end
-
 end
