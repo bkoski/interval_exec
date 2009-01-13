@@ -1,3 +1,8 @@
+== 0.5.1 2009-01-13
+
+* 1 major enhancement:
+  * :interval_end_proc now runs in thread immediately after block completes to avoid affecting execution time
+
 == 0.5.0 2009-01-11
 
 * 1 major enhancement:

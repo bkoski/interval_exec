@@ -4,5 +4,5 @@ $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname
 require File.dirname(__FILE__) + '/interval_exec/interval_exec'
 
 module IntervalExecGem
-  VERSION = '0.5.0'
+  VERSION = '0.5.1'
 end

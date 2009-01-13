@@ -19,7 +19,6 @@ class IntervalExec
   # <b>Notes:</b>
   # * If code execution ends early, code sleeps until _duration_ is reached.
   # * Code runs inside a standard +loop+, so +break+ and +next+ keywords can be used to stop execution and skip to next interval
-  # * IntervalExec doesn't do any exception handling
   def self.run(duration, overrun_handler, opts = {}, &block)
     interval_end_proc = opts[:interval_end_proc]
     
@@ -30,6 +29,8 @@ class IntervalExec
       
       end_time = Time.now
       actual_duration = end_time - start_time
+      
+      Thread.new { interval_end_proc.call(actual_duration) } unless interval_end_proc.nil?
       
       if actual_duration < duration
         Kernel.sleep(duration - actual_duration)
@@ -42,8 +43,6 @@ class IntervalExec
           Kernel.sleep(duration - overrun)
         end
       end
-      
-      interval_end_proc.call(actual_duration) unless interval_end_proc.nil?
     end
   end
   
